@@ -1,4 +1,4 @@
-import { useContext, useState, useEffect } from "react";
+import { useContext, useState, useEffect, useCallback } from "react";
 import Modal from "../../UI/Modal/Modal";
 import CartItem from "./CartItem";
 import CartContext from "../../context/cart-context";
@@ -7,23 +7,24 @@ const Cart = (props) => {
     const [order, setOrder] = useState(false);
     const [cartContent, setCartContent] = useState();
     const ctx = useContext(CartContext);
-    const cartItemAddHandler = (item) => {
+    const cartItemAddHandler = useCallback((item) => {
         ctx.addItem({
             ...item,
             quantity: 1
         })
-    }
-    const cartItemRemoveHandler = (id) => {
+    }, [ctx]);
+    const cartItemRemoveHandler = useCallback((id) => {
         ctx.removeItem(id);
-    }
+    }, [ctx]);
 
-    const clearCartHandler = () => {
+    const clearCartHandler = useCallback(() => {
         ctx.clear();
-    }  
-    const stateHandler = () => {
-        console.log("state handled, order " + order);
+    }, [ctx])
+    
+    const stateHandler = useCallback(() => {
         if (order) {
-            setCartContent(<p>Your order has been <strong>confirmed!</strong> Thank you for dining with us.</p>)   
+            setCartContent(<p>Your order has been <strong>confirmed!</strong> Thank you for dining with us.</p>) 
+            clearCartHandler();  
         } else if (ctx.items.length > 0) {
             setCartContent(
                 <>
@@ -45,15 +46,16 @@ const Cart = (props) => {
                     </div>
                 </>
             );
+    
         } else {
             setCartContent(<p>No items are currently in your cart. Go add some!</p>);
             
         }
-    }
+    }, [cartItemAddHandler, cartItemRemoveHandler, clearCartHandler, ctx, order])
     
     useEffect(() => {
         stateHandler(order)
-    }, [order, ctx.items])
+    }, [order, ctx.items, stateHandler])
     
     const orderHandler = () => {
         console.log("order simulated")
