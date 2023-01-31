@@ -1,0 +1,70 @@
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(3px);
+}
+
+.modal {
+    background-color: white;
+    position: fixed;
+    top: 20vh;
+    left: 10%;
+    width: 80%;
+    z-index: 100;
+    overflow: hidden;
+}
+
+.header {
+    background-color: rgb(26, 26, 26);
+    padding: 1rem;
+    display: flex;
+    background-clip: padding-box;
+}
+
+.header div {
+
+    width: 50%;
+    border-radius: 2px;
+}
+
+.header button {
+    margin-top: -0.25rem;
+    float: right;
+}
+
+.header h2 {
+    padding-left: 2rem;
+    margin: 0;
+    color: white;
+    max-width: 50%;
+}
+
+.content {
+    padding: 1rem 3rem;
+}
+
+.actions {
+    padding: 1rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.actions > * {
+    margin-left: 2rem;
+}
+
+@media (min-width: 768px) {
+    .modal {
+        left: calc(50% - 20rem);
+        width: 40rem;
+    }
+}
+
+.hideScroll {
+    overflow: hidden;
+}

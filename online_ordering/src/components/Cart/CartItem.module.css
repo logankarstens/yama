@@ -1,0 +1,40 @@
+.main {
+    line-height: 0;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgb(200, 200, 200);
+}
+
+.price {
+    color: rgb(45, 51, 132);
+}
+
+.container {
+    display: flex;
+}
+
+.container > div {
+    width: 50%;
+    display: flex;
+}
+
+.right {
+    float: right;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+.right > * {
+    height: 2em;
+    margin-left: 1em;
+}
+
+.main input {
+    max-width: 3rem;
+    margin-left: 0.5rem;
+    line-height: 1.2rem;
+}
+
+.main input:focus {
+    outline: none;
+    border: 2px solid grey;
+    border-radius: 3px;
+}

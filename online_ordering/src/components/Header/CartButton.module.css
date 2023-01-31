@@ -1,0 +1,70 @@
+
+.icon {
+    width: 1.35rem;
+    height: 1.35rem;
+    margin-right: -1rem;
+  }
+
+.cart {
+    display:flex;
+    justify-content: space-evenly;
+    background-color: transparent !important;
+    backdrop-filter: blur(2px);
+    outline: 2px solid white;
+    float: right;
+    height: 3rem;
+    margin-left: auto;
+    margin-right: 10%;
+    width: 15rem;
+    transition: color 0.1s linear;
+    transition: background-color 0.1s linear;
+}
+
+.cart:hover{
+    background-color:white!important;
+    color: #212121;
+    transition: color 0.1s linear;
+    transition: background-color 0.1s linear;
+
+}
+
+.cart-count {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1.3rem;
+    height: 1.8rem;
+    background-color:rgb(255, 255, 255);
+    color: #212121;
+    text-align: center;
+    margin-left: -1rem;
+    width: 3rem;
+}
+
+.bump {
+    animation: bump 300ms ease-out;
+}
+
+@media (min-width: 1000px) {
+    .cart {
+        margin-right: 20%;
+    }
+}
+  
+  @keyframes bump {
+    0% {
+      transform: scale(1);
+    }
+    10% {
+      transform: scale(0.9);
+    }
+    30% {
+      transform: scale(1.1);
+    }
+    50% {
+      transform: scale(1.15);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }

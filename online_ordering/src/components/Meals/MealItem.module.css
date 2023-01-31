@@ -1,0 +1,48 @@
+.main {
+    display: flex;
+    text-align: left;
+    padding: 2rem 0rem 0.5rem 0rem;
+}
+
+.left > * {
+    margin-top: -10px;
+}
+.main div {
+    width: 50%;
+}
+
+.main input {
+    max-width: 3rem;
+    margin-left: 0.5rem;
+    line-height: 1.2rem;
+}
+
+.main input:focus {
+    outline: none;
+    border: 2px solid grey;
+    border-radius: 3px;
+}
+
+.main h4 {
+    word-break: break-all;
+    white-space: normal;
+}
+
+.price {
+    color: rgb(45, 51, 132);
+}
+
+.right {
+    line-height: 2rem;
+    float: right;
+    text-align: right;
+    margin-top: -1.25rem;
+}
+
+.right h3 {
+    line-height: 0;
+}
+
+.right h4 {
+    margin-bottom: 2rem;
+}

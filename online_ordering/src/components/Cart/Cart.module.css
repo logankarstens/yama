@@ -1,0 +1,19 @@
+.container {
+    display: flex;
+}
+
+.container > h2{
+    width: 50%;
+}
+
+.right {
+    text-align: right;
+    float: right;
+}
+
+.cart-items {
+    max-height: 30vh;
+    margin-right: -2rem;
+    padding-right: 1rem;
+    overflow-y: scroll;
+}
